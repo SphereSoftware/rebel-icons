@@ -4,7 +4,10 @@
   "description": "Include an awesome rebel icons in your React projects with `react-icons`. You can use ES6 imports that allows you to include only icons that your project is using. Highly customizable set of icons.",
   "main": "lib/index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "glob": "^7.1.1",
+    "svgo": "^0.7.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
