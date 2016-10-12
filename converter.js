@@ -47,7 +47,7 @@ var config = {
     //  { addAttributesToSVGElement: true },
     {
       removeAttrs: {
-        attrs: '.*:(fill|stroke)'
+        attrs: '.*:(fill)'
       }
     }
   ],
@@ -65,7 +65,15 @@ function generateComponentBody(filePath) {
     if (err) { throw err; }
 
     SVGO.optimize(data, (result) => {
-      result.data = result.data.replace(/(<svg([^>]+)>)/ig, '').replace('</svg>', '')
+      // fixes for react
+      result.data = result.data
+        .replace(/(<svg([^>]+)>)/ig, '')
+        .replace('</svg>', '')
+        .replace(/stroke="([^"]+)"/g, 'fill="currentColor"')
+        .replace(/fill\-rule/g, 'fillRule')
+        .replace(/clip\-rule/g, 'clipRule')
+        .replace(/stroke\-miterlimit/g, 'strokeMiterlimit')
+        .replace(/stroke\-width/g, 'strokeWidth')
 
       const template = `
 import React from 'react'
