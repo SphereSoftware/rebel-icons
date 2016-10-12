@@ -1,5 +1,4 @@
-'use babel';
-            
+
 import React from 'react'
 import IconBase from './IconBase'
 

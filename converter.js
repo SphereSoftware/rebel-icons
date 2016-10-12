@@ -67,8 +67,7 @@ function generateComponentBody(filePath) {
     SVGO.optimize(data, (result) => {
       result.data = result.data.replace(/(<svg([^>]+)>)/ig, '').replace('</svg>', '')
 
-      const template = `'use babel';
-            
+      const template = `
 import React from 'react'
 import IconBase from './IconBase'
 
@@ -95,7 +94,7 @@ GLOB(PATH.join(__dirname, '.') + '/icons/svg/*.svg', (err, icons) => {
   });
 
   const indexFile = names.map((name) => {
-    return `export const ${name} from './${name}';`
+    return `export ${name} from './${name}';`
   }).join('\n') + '\n';
 
   FS.writeFileSync(PATH.join(__dirname, `src/index.js`), `'use babel';\n\n${indexFile}`, 'utf-8');
