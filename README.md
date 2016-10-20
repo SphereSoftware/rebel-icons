@@ -1,6 +1,6 @@
 # rebel-icons
 
-Include pixel perfect icons in your React projects easly with ```rebel-icons```.
+Include pixel perfect icons in your React projects easily with ```rebel-icons```.
 Use ES6 imports and include only the icons that your project is using.
 
 ![RebelIcons](/media/rebel-icons.png)
@@ -22,7 +22,7 @@ any other project in your system.
 
 ## Usage
 
-You can easelly add `rebel-icons` to any Component in you app, just import it, and you good to
+You can easily add `rebel-icons` to any Component in you app, just import it, and you good to
 go.
 
 ```javascript
@@ -90,7 +90,7 @@ export default class IconConfigurator extends Component {
 }
 ```
 
-You can connect this `Component` to `redux`, and upadte through the application state, or
+You can connect this `Component` to `redux`, and update through the application state, or
 introduce your own way to communicate with it.
 
 # ![rebel](media/rebel.png)
