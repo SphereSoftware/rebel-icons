@@ -113,10 +113,10 @@ General instructions on _how_ to contribute can be found here [CONTRIBUTING](CON
 ## Contributors
 
 
-| <a href="https://github.com/ogrechishkina" target="_blank">**Oksana Grechishkina**</a> | <a href="https://www.linkedin.com/in/alla-odeyanenko-3171762a" target="_blank">**Alla Odeyanenko**</a> | <a href="https://github.com/shemerey" target="_blank">**Anton Shemerey**</a> |
+| <a href="https://www.linkedin.com/in/alla-odeyanenko-3171762a" target="_blank">**Alla Odeyanenko**</a> | <a href="https://github.com/shemerey" target="_blank">**Anton Shemerey**</a> |
 | :---: |:---:| :---:|
-| [![ogrechishkina](https://avatars3.githubusercontent.com/u/11665147?v=3&s=200)](https://github.com/ogrechishkina) | [<img src="https://cloud.githubusercontent.com/assets/31591/19243437/5f73b314-8f20-11e6-953e-c64ee0583ea8.jpg" width="200" height="200">](https://www.linkedin.com/in/alla-odeyanenko-3171762a) | [![Anton Shemerey](https://avatars3.githubusercontent.com/u/31591?v=3&s=200)](https://github.com/shemerey)  |
-| <a href="https://github.com/ogrechishkina" target="_blank">`https://github.com/ogrechishkina`</a> | <a href="https://www.linkedin.com/in/alla-odeyanenko-3171762a" target="_blank">`https://www.linkedin.com/in/alla-odeyanenko`</a> | <a href="https://github.com/shemerey" target="_blank">`https://github.com/shemerey`</a> |
+| [<img src="https://cloud.githubusercontent.com/assets/31591/19243437/5f73b314-8f20-11e6-953e-c64ee0583ea8.jpg" width="200" height="200">](https://www.linkedin.com/in/alla-odeyanenko-3171762a) | [![Anton Shemerey](https://avatars3.githubusercontent.com/u/31591?v=3&s=200)](https://github.com/shemerey)  |
+| <a href="https://www.linkedin.com/in/alla-odeyanenko-3171762a" target="_blank">`https://www.linkedin.com/in/alla-odeyanenko`</a> | <a href="https://github.com/shemerey" target="_blank">`https://github.com/shemerey`</a> |
 
 ----
 
