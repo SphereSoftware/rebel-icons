@@ -1,6 +1,6 @@
 {
   "name": "rebel-icons",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Include an awesome rebel icons in your React projects with `react-icons`. You can use ES6 imports that allows you to include only icons that your project is using. Highly customizable set of icons.",
   "main": "lib/index",
   "dependencies": {},
