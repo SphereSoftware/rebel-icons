@@ -1,98 +1,38 @@
-'use babel';
+import React, { PropTypes } from 'react';
+import RebelLib from './rebel-lib';
 
-export AndroidIcon from './AndroidIcon';
-export AngularIcon from './AngularIcon';
-export AppleIcon from './AppleIcon';
-export ArrowDownIcon from './ArrowDownIcon';
-export ArrowLeftIcon from './ArrowLeftIcon';
-export ArrowRightIcon from './ArrowRightIcon';
-export ArrowUpIcon from './ArrowUpIcon';
-export AtomIcon from './AtomIcon';
-export AWSIcon from './AWSIcon';
-export BarsIcon from './BarsIcon';
-export BootstrapIcon from './BootstrapIcon';
-export ChartsIcon from './ChartsIcon';
-export CheckIcon from './CheckIcon';
-export ChevronDownIcon from './ChevronDownIcon';
-export ChevronLeftIcon from './ChevronLeftIcon';
-export ChevronRightIcon from './ChevronRightIcon';
-export ChevronUpIcon from './ChevronUpIcon';
-export ClipIcon from './ClipIcon';
-export CloseIcon from './CloseIcon';
-export CloudIcon from './CloudIcon';
-export CogIcon from './CogIcon';
-export CollapseScreenIcon from './CollapseScreenIcon';
-export CSSIcon from './CSSIcon';
-export DropIcon from './DropIcon';
-export DropBoxIcon from './DropBoxIcon';
-export DrupalIcon from './DrupalIcon';
-export EnvelopeIcon from './EnvelopeIcon';
-export ExclamationIcon from './ExclamationIcon';
-export ExternalLinkIcon from './ExternalLinkIcon';
-export EyeIcon from './EyeIcon';
-export FacebookIcon from './FacebookIcon';
-export FireFoxIcon from './FireFoxIcon';
-export FolderIcon from './FolderIcon';
-export FullHeartIcon from './FullHeartIcon';
-export FullScreenIcon from './FullScreenIcon';
-export FullStarIcon from './FullStarIcon';
-export GitIcon from './GitIcon';
-export GitHubIcon from './GitHubIcon';
-export GlobeIcon from './GlobeIcon';
-export GoogleChromeIcon from './GoogleChromeIcon';
-export GooglePlusIcon from './GooglePlusIcon';
-export GraphTreeIcon from './GraphTreeIcon';
-export HeartIcon from './HeartIcon';
-export HTMLIcon from './HTMLIcon';
-export IEIcon from './IEIcon';
-export InstagramIcon from './InstagramIcon';
-export JQueryIcon from './JQueryIcon';
-export JSIcon from './JSIcon';
-export KrakenJSIcon from './KrakenJSIcon';
-export LikeIcon from './LikeIcon';
-export LinkIcon from './LinkIcon';
-export LinkedInIcon from './LinkedInIcon';
-export LinuxIcon from './LinuxIcon';
-export LockIcon from './LockIcon';
-export MessageIcon from './MessageIcon';
-export MinusIcon from './MinusIcon';
-export MongoDBIcon from './MongoDBIcon';
-export MySQLIcon from './MySQLIcon';
-export NodeJSIcon from './NodeJSIcon';
-export NoEyeIcon from './NoEyeIcon';
-export PaperPlaneIcon from './PaperPlaneIcon';
-export PencilIcon from './PencilIcon';
-export PHPIcon from './PHPIcon';
-export PictureIcon from './PictureIcon';
-export PieChartsIcon from './PieChartsIcon';
-export PinterestIcon from './PinterestIcon';
-export PlusIcon from './PlusIcon';
-export PointerIcon from './PointerIcon';
-export PostgreSQLIcon from './PostgreSQLIcon';
-export PythonIcon from './PythonIcon';
-export QuestionIcon from './QuestionIcon';
-export RebelIcon from './RebelIcon';
-export RedoIcon from './RedoIcon';
-export RefreshIcon from './RefreshIcon';
-export RetweetIcon from './RetweetIcon';
-export RubyIcon from './RubyIcon';
-export RubyOnRailsIcon from './RubyOnRailsIcon';
-export SearchIcon from './SearchIcon';
-export ShareIcon from './ShareIcon';
-export SkypeIcon from './SkypeIcon';
-export SoundCloudIcon from './SoundCloudIcon';
-export SpinnerIcon from './SpinnerIcon';
-export StarIcon from './StarIcon';
-export StatsIcon from './StatsIcon';
-export TrashCanIcon from './TrashCanIcon';
-export TrophyIcon from './TrophyIcon';
-export TumblrIcon from './TumblrIcon';
-export TwitterIcon from './TwitterIcon';
-export UbuntuIcon from './UbuntuIcon';
-export UndoIcon from './UndoIcon';
-export UnlockIcon from './UnlockIcon';
-export UserIcon from './UserIcon';
-export VimeoIcon from './VimeoIcon';
-export WindowsIcon from './WindowsIcon';
-export WordPressIcon from './WordPressIcon';
-export YouTubeIcon from './YouTubeIcon';
+const Icons = {};
+
+for(const key in RebelLib) {
+  try {
+    Icons[key] = require('./rebel-lib/' + `${RebelLib[key]}Icon`).default;
+  }
+  catch (e) {}
+}
+
+const Icon = ({ icon, style, color, size, svgStyle, svgProps, ...rest }) => {
+  if (typeof Icons[icon] !== 'function') {
+    console.error(`Rebel Icons: requested unknown icon '${icon}'`);
+    return <div />;
+  }
+  const props = { ...svgProps, color, size, style: svgStyle };
+  return (
+    <div style={ {...style, display: 'inline-block', lineHeight: 0} } { ...rest }>
+      { React.createElement(Icons[icon], props) }
+    </div>
+  );
+};
+
+Icon.propTypes = {
+  icon: PropTypes.string.isRequired,
+  style: PropTypes.object,
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  svgStyle: PropTypes.object,
+  svgProps: PropTypes.object
+};
+
+export default Icon;
