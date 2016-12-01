@@ -55,7 +55,9 @@ export default (props) =>
 
 function prepareSVGForReact(svg) {
   const svgContent = svg.match(/<svg[^>]+>([\W\w]*)<\/svg>/)[1];
-  return svgContent.replace(/[\w]+[-:][\w]+(?=[=])/g, atr => camelCase(atr));
+  return svgContent
+    .replace(/[\w]+[-:][\w]+(?=[=])/g, atr => camelCase(atr))
+    .replace(/stroke="([^"]+)"/g, 'stroke="currentColor"');
 }
 
 function getIconName(name) {
