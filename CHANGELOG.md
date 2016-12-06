@@ -21,3 +21,7 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 - remove *.ai files from repo
 - minor changes of repo's structure
 - refactoring
+
+## 2.0.1 - 2016-12-1
+
+- fixed stroke color (changed it to current color)
